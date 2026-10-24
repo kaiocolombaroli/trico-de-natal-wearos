@@ -93,7 +93,7 @@ def main():
     o += ["    " + l for l in sl]
     o += ['            <Variant mode="AMBIENT" target="alpha" value="200" />', "        </Group>",
           "    </Scene>", "</WatchFace>", ""]
-    SAIDA.write_text("\n".join(o), encoding="utf-8")
+    SAIDA.write_text("\n".join(o), encoding="utf-8", newline=chr(10))
 
 
 main()
