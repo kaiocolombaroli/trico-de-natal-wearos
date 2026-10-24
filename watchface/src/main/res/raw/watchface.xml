@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WatchFace width="450" height="450">
+    <Metadata key="CLOCK_TYPE" value="DIGITAL" />
+    <Metadata key="PREVIEW_TIME" value="10:08:32" />
+
+    <Scene backgroundColor="#ff000000">
+        <!-- Tecido de tricô (apagado no modo ambiente) -->
+        <Group name="fundo" x="0" y="0" width="450" height="450">
+            <PartImage x="0" y="0" width="450" height="450">
+                <Image resource="fundo" />
+                <Variant mode="AMBIENT" target="alpha" value="0" />
+            </PartImage>
+        </Group>
+
+        <!-- Hora HH:mm: 4 dígitos + dois pontos = 4*56 + 21 = 245 px, na grade do tecido -->
+        <Group name="hora" x="0" y="0" width="450" height="450">
+            <Group name="h_dezena" x="106" y="225" width="56" height="77">
+                <Condition>
+                    <Expressions>
+                        <Expression name="d0"><![CDATA[floor([HOUR_0_23] / 10) == 0]]></Expression>
+                        <Expression name="d1"><![CDATA[floor([HOUR_0_23] / 10) == 1]]></Expression>
+                    </Expressions>
+                    <Compare expression="d0">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_0" /></PartImage>
+                    </Compare>
+                    <Compare expression="d1">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_1" /></PartImage>
+                    </Compare>
+                    <Default>
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_2" /></PartImage>
+                    </Default>
+                </Condition>
+            </Group>
+            <Group name="h_unidade" x="162" y="225" width="56" height="77">
+                <Condition>
+                    <Expressions>
+                        <Expression name="d0"><![CDATA[[HOUR_0_23] % 10 == 0]]></Expression>
+                        <Expression name="d1"><![CDATA[[HOUR_0_23] % 10 == 1]]></Expression>
+                        <Expression name="d2"><![CDATA[[HOUR_0_23] % 10 == 2]]></Expression>
+                        <Expression name="d3"><![CDATA[[HOUR_0_23] % 10 == 3]]></Expression>
+                        <Expression name="d4"><![CDATA[[HOUR_0_23] % 10 == 4]]></Expression>
+                        <Expression name="d5"><![CDATA[[HOUR_0_23] % 10 == 5]]></Expression>
+                        <Expression name="d6"><![CDATA[[HOUR_0_23] % 10 == 6]]></Expression>
+                        <Expression name="d7"><![CDATA[[HOUR_0_23] % 10 == 7]]></Expression>
+                        <Expression name="d8"><![CDATA[[HOUR_0_23] % 10 == 8]]></Expression>
+                    </Expressions>
+                    <Compare expression="d0">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_0" /></PartImage>
+                    </Compare>
+                    <Compare expression="d1">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_1" /></PartImage>
+                    </Compare>
+                    <Compare expression="d2">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_2" /></PartImage>
+                    </Compare>
+                    <Compare expression="d3">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_3" /></PartImage>
+                    </Compare>
+                    <Compare expression="d4">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_4" /></PartImage>
+                    </Compare>
+                    <Compare expression="d5">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_5" /></PartImage>
+                    </Compare>
+                    <Compare expression="d6">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_6" /></PartImage>
+                    </Compare>
+                    <Compare expression="d7">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_7" /></PartImage>
+                    </Compare>
+                    <Compare expression="d8">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_8" /></PartImage>
+                    </Compare>
+                    <Default>
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_9" /></PartImage>
+                    </Default>
+                </Condition>
+            </Group>
+            <Group name="dois_pontos" x="218" y="225" width="21" height="77">
+                <PartImage x="0" y="0" width="21" height="77"><Image resource="g_dois_pontos" /></PartImage>
+            </Group>
+            <Group name="m_dezena" x="239" y="225" width="56" height="77">
+                <Condition>
+                    <Expressions>
+                        <Expression name="d0"><![CDATA[floor([MINUTE] / 10) == 0]]></Expression>
+                        <Expression name="d1"><![CDATA[floor([MINUTE] / 10) == 1]]></Expression>
+                        <Expression name="d2"><![CDATA[floor([MINUTE] / 10) == 2]]></Expression>
+                        <Expression name="d3"><![CDATA[floor([MINUTE] / 10) == 3]]></Expression>
+                        <Expression name="d4"><![CDATA[floor([MINUTE] / 10) == 4]]></Expression>
+                        <Expression name="d5"><![CDATA[floor([MINUTE] / 10) == 5]]></Expression>
+                        <Expression name="d6"><![CDATA[floor([MINUTE] / 10) == 6]]></Expression>
+                        <Expression name="d7"><![CDATA[floor([MINUTE] / 10) == 7]]></Expression>
+                        <Expression name="d8"><![CDATA[floor([MINUTE] / 10) == 8]]></Expression>
+                    </Expressions>
+                    <Compare expression="d0">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_0" /></PartImage>
+                    </Compare>
+                    <Compare expression="d1">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_1" /></PartImage>
+                    </Compare>
+                    <Compare expression="d2">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_2" /></PartImage>
+                    </Compare>
+                    <Compare expression="d3">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_3" /></PartImage>
+                    </Compare>
+                    <Compare expression="d4">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_4" /></PartImage>
+                    </Compare>
+                    <Compare expression="d5">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_5" /></PartImage>
+                    </Compare>
+                    <Compare expression="d6">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_6" /></PartImage>
+                    </Compare>
+                    <Compare expression="d7">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_7" /></PartImage>
+                    </Compare>
+                    <Compare expression="d8">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_8" /></PartImage>
+                    </Compare>
+                    <Default>
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_9" /></PartImage>
+                    </Default>
+                </Condition>
+            </Group>
+            <Group name="m_unidade" x="295" y="225" width="56" height="77">
+                <Condition>
+                    <Expressions>
+                        <Expression name="d0"><![CDATA[[MINUTE] % 10 == 0]]></Expression>
+                        <Expression name="d1"><![CDATA[[MINUTE] % 10 == 1]]></Expression>
+                        <Expression name="d2"><![CDATA[[MINUTE] % 10 == 2]]></Expression>
+                        <Expression name="d3"><![CDATA[[MINUTE] % 10 == 3]]></Expression>
+                        <Expression name="d4"><![CDATA[[MINUTE] % 10 == 4]]></Expression>
+                        <Expression name="d5"><![CDATA[[MINUTE] % 10 == 5]]></Expression>
+                        <Expression name="d6"><![CDATA[[MINUTE] % 10 == 6]]></Expression>
+                        <Expression name="d7"><![CDATA[[MINUTE] % 10 == 7]]></Expression>
+                        <Expression name="d8"><![CDATA[[MINUTE] % 10 == 8]]></Expression>
+                    </Expressions>
+                    <Compare expression="d0">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_0" /></PartImage>
+                    </Compare>
+                    <Compare expression="d1">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_1" /></PartImage>
+                    </Compare>
+                    <Compare expression="d2">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_2" /></PartImage>
+                    </Compare>
+                    <Compare expression="d3">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_3" /></PartImage>
+                    </Compare>
+                    <Compare expression="d4">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_4" /></PartImage>
+                    </Compare>
+                    <Compare expression="d5">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_5" /></PartImage>
+                    </Compare>
+                    <Compare expression="d6">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_6" /></PartImage>
+                    </Compare>
+                    <Compare expression="d7">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_7" /></PartImage>
+                    </Compare>
+                    <Compare expression="d8">
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_8" /></PartImage>
+                    </Compare>
+                    <Default>
+                        <PartImage x="0" y="0" width="56" height="77"><Image resource="g_9" /></PartImage>
+                    </Default>
+                </Condition>
+            </Group>
+            <Variant mode="AMBIENT" target="alpha" value="200" />
+        </Group>
+
+        <!-- Dia da semana em pt-BR, independente do idioma do relógio -->
+        <Group name="dia_semana" x="0" y="0" width="450" height="450">
+            <Condition>
+                <Expressions>
+                    <Expression name="dom"><![CDATA[[DAY_OF_WEEK] == 1]]></Expression>
+                    <Expression name="seg"><![CDATA[[DAY_OF_WEEK] == 2]]></Expression>
+                    <Expression name="ter"><![CDATA[[DAY_OF_WEEK] == 3]]></Expression>
+                    <Expression name="qua"><![CDATA[[DAY_OF_WEEK] == 4]]></Expression>
+                    <Expression name="qui"><![CDATA[[DAY_OF_WEEK] == 5]]></Expression>
+                    <Expression name="sex"><![CDATA[[DAY_OF_WEEK] == 6]]></Expression>
+                </Expressions>
+                <Compare expression="dom">
+                    <PartImage x="161" y="352" width="128" height="36"><Image resource="dia_domingo" /></PartImage>
+                </Compare>
+                <Compare expression="seg">
+                    <PartImage x="157" y="352" width="136" height="36"><Image resource="dia_segunda" /></PartImage>
+                </Compare>
+                <Compare expression="ter">
+                    <PartImage x="179" y="352" width="92" height="36"><Image resource="dia_terca" /></PartImage>
+                </Compare>
+                <Compare expression="qua">
+                    <PartImage x="169" y="352" width="112" height="36"><Image resource="dia_quarta" /></PartImage>
+                </Compare>
+                <Compare expression="qui">
+                    <PartImage x="175" y="352" width="100" height="36"><Image resource="dia_quinta" /></PartImage>
+                </Compare>
+                <Compare expression="sex">
+                    <PartImage x="179" y="352" width="92" height="36"><Image resource="dia_sexta" /></PartImage>
+                </Compare>
+                <Default>
+                    <PartImage x="167" y="352" width="116" height="36"><Image resource="dia_sabado" /></PartImage>
+                </Default>
+            </Condition>
+            <Variant mode="AMBIENT" target="alpha" value="200" />
+        </Group>
+
+        <!-- Data dd/mm: 5 glifos de 20 px centrados (x = 175..275) -->
+        <Group name="data" x="0" y="0" width="450" height="450">
+            <Group name="d_dezena" x="175" y="392" width="20" height="36">
+                <Condition>
+                    <Expressions>
+                        <Expression name="d0"><![CDATA[floor([DAY] / 10) == 0]]></Expression>
+                        <Expression name="d1"><![CDATA[floor([DAY] / 10) == 1]]></Expression>
+                        <Expression name="d2"><![CDATA[floor([DAY] / 10) == 2]]></Expression>
+                    </Expressions>
+                    <Compare expression="d0">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_0" /></PartImage>
+                    </Compare>
+                    <Compare expression="d1">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_1" /></PartImage>
+                    </Compare>
+                    <Compare expression="d2">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_2" /></PartImage>
+                    </Compare>
+                    <Default>
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_3" /></PartImage>
+                    </Default>
+                </Condition>
+            </Group>
+            <Group name="d_unidade" x="195" y="392" width="20" height="36">
+                <Condition>
+                    <Expressions>
+                        <Expression name="d0"><![CDATA[[DAY] % 10 == 0]]></Expression>
+                        <Expression name="d1"><![CDATA[[DAY] % 10 == 1]]></Expression>
+                        <Expression name="d2"><![CDATA[[DAY] % 10 == 2]]></Expression>
+                        <Expression name="d3"><![CDATA[[DAY] % 10 == 3]]></Expression>
+                        <Expression name="d4"><![CDATA[[DAY] % 10 == 4]]></Expression>
+                        <Expression name="d5"><![CDATA[[DAY] % 10 == 5]]></Expression>
+                        <Expression name="d6"><![CDATA[[DAY] % 10 == 6]]></Expression>
+                        <Expression name="d7"><![CDATA[[DAY] % 10 == 7]]></Expression>
+                        <Expression name="d8"><![CDATA[[DAY] % 10 == 8]]></Expression>
+                    </Expressions>
+                    <Compare expression="d0">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_0" /></PartImage>
+                    </Compare>
+                    <Compare expression="d1">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_1" /></PartImage>
+                    </Compare>
+                    <Compare expression="d2">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_2" /></PartImage>
+                    </Compare>
+                    <Compare expression="d3">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_3" /></PartImage>
+                    </Compare>
+                    <Compare expression="d4">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_4" /></PartImage>
+                    </Compare>
+                    <Compare expression="d5">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_5" /></PartImage>
+                    </Compare>
+                    <Compare expression="d6">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_6" /></PartImage>
+                    </Compare>
+                    <Compare expression="d7">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_7" /></PartImage>
+                    </Compare>
+                    <Compare expression="d8">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_8" /></PartImage>
+                    </Compare>
+                    <Default>
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_9" /></PartImage>
+                    </Default>
+                </Condition>
+            </Group>
+            <Group name="barra" x="215" y="392" width="20" height="36">
+                <PartImage x="0" y="0" width="20" height="36"><Image resource="p_barra" /></PartImage>
+            </Group>
+            <Group name="mes_dezena" x="235" y="392" width="20" height="36">
+                <Condition>
+                    <Expressions>
+                        <Expression name="d0"><![CDATA[floor([MONTH] / 10) == 0]]></Expression>
+                    </Expressions>
+                    <Compare expression="d0">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_0" /></PartImage>
+                    </Compare>
+                    <Default>
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_1" /></PartImage>
+                    </Default>
+                </Condition>
+            </Group>
+            <Group name="mes_unidade" x="255" y="392" width="20" height="36">
+                <Condition>
+                    <Expressions>
+                        <Expression name="d0"><![CDATA[[MONTH] % 10 == 0]]></Expression>
+                        <Expression name="d1"><![CDATA[[MONTH] % 10 == 1]]></Expression>
+                        <Expression name="d2"><![CDATA[[MONTH] % 10 == 2]]></Expression>
+                        <Expression name="d3"><![CDATA[[MONTH] % 10 == 3]]></Expression>
+                        <Expression name="d4"><![CDATA[[MONTH] % 10 == 4]]></Expression>
+                        <Expression name="d5"><![CDATA[[MONTH] % 10 == 5]]></Expression>
+                        <Expression name="d6"><![CDATA[[MONTH] % 10 == 6]]></Expression>
+                        <Expression name="d7"><![CDATA[[MONTH] % 10 == 7]]></Expression>
+                        <Expression name="d8"><![CDATA[[MONTH] % 10 == 8]]></Expression>
+                    </Expressions>
+                    <Compare expression="d0">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_0" /></PartImage>
+                    </Compare>
+                    <Compare expression="d1">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_1" /></PartImage>
+                    </Compare>
+                    <Compare expression="d2">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_2" /></PartImage>
+                    </Compare>
+                    <Compare expression="d3">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_3" /></PartImage>
+                    </Compare>
+                    <Compare expression="d4">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_4" /></PartImage>
+                    </Compare>
+                    <Compare expression="d5">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_5" /></PartImage>
+                    </Compare>
+                    <Compare expression="d6">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_6" /></PartImage>
+                    </Compare>
+                    <Compare expression="d7">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_7" /></PartImage>
+                    </Compare>
+                    <Compare expression="d8">
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_8" /></PartImage>
+                    </Compare>
+                    <Default>
+                        <PartImage x="0" y="0" width="20" height="36"><Image resource="p_9" /></PartImage>
+                    </Default>
+                </Condition>
+            </Group>
+            <Variant mode="AMBIENT" target="alpha" value="200" />
+        </Group>
+    </Scene>
+</WatchFace>
